@@ -5,16 +5,18 @@ const ProductContext = createContext();
 
 function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    const fetchProdtcs = async () => {
+    const fetchProducts = async () => {
       try {
-        setProducts(await api.get("/products"));
+        const response = await api.get("/products"); // Fetch the response
+        setProducts(response); // Set only the data part
       } catch (error) {
         console.log(error.message);
       }
     };
 
-    fetchProdtcs();
+    fetchProducts();
   }, []);
 
   return (
