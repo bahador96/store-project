@@ -1,7 +1,8 @@
 import { useProduts } from "../context/ProductsContext";
 
 function ProductPage() {
-  console.log(useProduts());
+  const products = useProduts();
+  console.log(products);
 
   return <div>ProducsPaged</div>;
 }
