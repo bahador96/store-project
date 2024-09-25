@@ -9,7 +9,7 @@ function App() {
   return (
     <ProductsProvider>
       <Routes>
-        <Route index element={<Navigate to="/products" replace />} />
+        <Route path="/" element={<Navigate to="/products" replace />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/products/:id" element={<DetailsPage />} />
         <Route path="/checkout" element={<CheckOutPage />} />

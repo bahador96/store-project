@@ -4,7 +4,15 @@ function ProductPage() {
   const products = useProduts();
   console.log(products);
 
-  return <div>ProducsPaged</div>;
+  return (
+    <div>
+      <div>
+        {products.map((p) => (
+          <p key={p.id}>{p.title}</p>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default ProductPage;
